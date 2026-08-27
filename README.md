@@ -14,14 +14,14 @@
 
 ### About
 
-I build production GenAI systems — retrieval pipelines, agent workflows, and the interfaces that make them usable. At Siemens I'm engineering an AI assistant for threat and risk assessment, from LangGraph orchestration through to the dashboard analysts actually work in.
+I work at Siemens, where I build production GenAI systems across retrieval, agent workflows, and thoughtful product interfaces.
 
-Patent holder. I came up through embedded firmware and IoT fleets, which is where I learned that the model is never the hard part.
+Patent holder. I care about building things that are meaningful, dependable, and finished with intention. My path through embedded systems, IoT, and software taught me to value the details that turn a clever idea into something people can trust.
 
 ### Now
 
-- Agentic risk-assessment tooling at **Siemens** — LangGraph, FastAPI, React
-- Building **[LearnerVerse](https://learnerverse.xyz)**, turning raw playlists into structured courses
+- Building meaningful software at **Siemens** with LangGraph, FastAPI, and React
+- Turning ideas into useful, high-quality products
 - Publishing what I learn about LLM infrastructure
 
 <picture>
@@ -33,17 +33,17 @@ Patent holder. I came up through embedded firmware and IoT fleets, which is wher
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/stack-dark.svg">
-  <img src="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/stack-light.svg" alt="Stack. AI/LLM: LangChain, LangGraph, MCP, RAG, LlamaIndex, Ollama, LangFuse, Docling. Backend: Python, FastAPI, PostgreSQL, Prisma, Supabase, MongoDB, MSSQL. Frontend: TypeScript, React, Tailwind, shadcn/ui, Vite, Sass. Platform: Docker, Kubernetes, Helm, Vercel, GitHub Actions, Playwright, n8n.">
+  <img src="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/stack-light.svg" alt="Stack. AI/LLM: LangChain, LangGraph, MCP, RAG, LlamaIndex, Ollama, LangFuse. Backend: Python, FastAPI, PostgreSQL, Supabase, MongoDB. Frontend: TypeScript, JavaScript, React, Tailwind, Vite. Platform: Docker, Kubernetes, GitHub Actions, Playwright, n8n.">
 </picture>
 
 ### Selected work
 
-- **[LearnerVerse](https://learnerverse.xyz)** — AI-native learning platform that compiles any playlist into a structured, assessable course.
-- **[CatGPT Gateway](https://github.com/GautamVhavle/CatGPT-Gateway)** — OpenAI-compatible API surface over the ChatGPT and Claude web clients.
-- **[BrowserLLM](https://browserllm.vercel.app)** — 100+ language models running entirely in the browser on WebGPU. Nothing leaves the tab.
-- **[Spotify README Card](https://github.com/GautamVhavle/spotify-readme-card)** — Animated now-playing cards rendered as SVG at the edge, zero runtime dependencies. It draws the card above.
+- **[LearnerVerse](https://learnerverse.xyz)**: AI-native learning platform that compiles any playlist into a structured, assessable course.
+- **[CatGPT Gateway](https://github.com/GautamVhavle/CatGPT-Gateway)**: OpenAI-compatible API surface over the ChatGPT and Claude web clients.
+- **[BrowserLLM](https://browserllm.vercel.app)**: 100+ language models running entirely in the browser on WebGPU. Nothing leaves the tab.
+- **[Spotify README Card](https://github.com/GautamVhavle/spotify-readme-card)**: Animated now-playing cards rendered as SVG at the edge, zero runtime dependencies. It draws the card above.
 
-<sub>Plus nine client-side developer tools — JWT inspection, JSON repair, WCAG contrast auditing — at <a href="https://gautamvhavle.xyz/apps">gautamvhavle.xyz/apps</a></sub>
+<sub>Plus nine client-side developer tools for JWT inspection, JSON repair, and WCAG contrast auditing at <a href="https://gautamvhavle.xyz/apps">gautamvhavle.xyz/apps</a></sub>
 
 ### Writing
 

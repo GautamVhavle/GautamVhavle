@@ -29,7 +29,7 @@ const THEMES = {
 };
 
 const MONO = "ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace";
-const MONO_ADVANCE = 0.6; // monospace glyph width ratio — makes layout deterministic
+const MONO_ADVANCE = 0.6; // monospace glyph width ratio makes layout deterministic
 
 const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -50,7 +50,7 @@ async function getJSON(url) {
   const headers = { "User-Agent": `${USER}-profile-cards`, Accept: "application/vnd.github+json" };
   if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
   const res = await fetch(url, { headers });
-  if (!res.ok) throw new Error(`${res.status} ${res.statusText} — ${url}`);
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText}: ${url}`);
   return res.json();
 }
 
@@ -167,10 +167,10 @@ function renderContributions(data, t) {
 /* ---------------------------------------------------------------- stack grid */
 
 const STACK = [
-  ["AI / LLM", [["LangChain", "langchain"], ["LangGraph", null], ["MCP", null], ["RAG", null], ["LlamaIndex", null], ["Ollama", "ollama"], ["LangFuse", null], ["Docling", null]]],
-  ["Backend", [["Python", "python"], ["FastAPI", "fastapi"], ["PostgreSQL", "postgresql"], ["Prisma", "prisma"], ["Supabase", "supabase"], ["MongoDB", "mongodb"], ["MSSQL", null]]],
-  ["Frontend", [["TypeScript", "typescript"], ["React", "react"], ["Tailwind", "tailwindcss"], ["shadcn/ui", "shadcnui"], ["Vite", "vite"], ["Sass", "sass"]]],
-  ["Platform", [["Docker", "docker"], ["Kubernetes", "kubernetes"], ["Helm", "helm"], ["Vercel", "vercel"], ["Actions", "githubactions"], ["Playwright", null], ["n8n", "n8n"]]],
+  ["AI / LLM", [["LangChain", "langchain"], ["LangGraph", null], ["MCP", null], ["RAG", null], ["LlamaIndex", null], ["Ollama", "ollama"], ["LangFuse", null]]],
+  ["Backend", [["Python", "python"], ["FastAPI", "fastapi"], ["PostgreSQL", "postgresql"], ["Supabase", "supabase"], ["MongoDB", "mongodb"]]],
+  ["Frontend", [["TypeScript", "typescript"], ["JavaScript", "javascript"], ["React", "react"], ["Tailwind", "tailwindcss"], ["Vite", "vite"]]],
+  ["Platform", [["Docker", "docker"], ["Kubernetes", "kubernetes"], ["GitHub Actions", "githubactions"], ["Playwright", null], ["n8n", "n8n"]]],
 ];
 
 const iconPath = (slug) => {
@@ -286,5 +286,5 @@ for (const [name, theme] of Object.entries(THEMES)) {
 await updateReadme(await renderWriting());
 
 console.log(
-  `cards built — ${data.contributions} contributions · ${data.repos} repos · ${data.stars} stars · ${data.streak}d streak`
+  `cards built: ${data.contributions} contributions · ${data.repos} repos · ${data.stars} stars · ${data.streak}d streak`
 );
