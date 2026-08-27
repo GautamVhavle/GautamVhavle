@@ -61,11 +61,16 @@ async function collect() {
   ]);
 
   let stars = 0;
+  const traction = new Map();
   for (let page = 1; page <= 4; page++) {
     const repos = await getJSON(
       `https://api.github.com/users/${USER}/repos?per_page=100&page=${page}&type=owner`
     );
-    stars += repos.reduce((sum, r) => sum + (r.fork ? 0 : r.stargazers_count), 0);
+    for (const r of repos) {
+      if (r.fork) continue;
+      stars += r.stargazers_count;
+      traction.set(r.name, { stars: r.stargazers_count, forks: r.forks_count });
+    }
     if (repos.length < 100) break;
   }
 
@@ -87,6 +92,7 @@ async function collect() {
     followers: profile.followers,
     stars,
     streak,
+    traction,
   };
 }
 
@@ -166,11 +172,12 @@ function renderContributions(data, t) {
 
 /* ---------------------------------------------------------------- stack grid */
 
+/* TypeScript is listed without JavaScript on purpose: one implies the other. */
 const STACK = [
   ["AI / LLM", [["LangChain", "langchain"], ["LangGraph", null], ["MCP", null], ["RAG", null], ["LlamaIndex", null], ["Ollama", "ollama"], ["LangFuse", null]]],
-  ["Backend", [["Python", "python"], ["FastAPI", "fastapi"], ["PostgreSQL", "postgresql"], ["Supabase", "supabase"], ["MongoDB", "mongodb"]]],
-  ["Frontend", [["TypeScript", "typescript"], ["JavaScript", "javascript"], ["React", "react"], ["Tailwind", "tailwindcss"], ["Vite", "vite"]]],
-  ["Platform", [["Docker", "docker"], ["Kubernetes", "kubernetes"], ["GitHub Actions", "githubactions"], ["Playwright", null], ["n8n", "n8n"]]],
+  ["Backend", [["Python", "python"], ["FastAPI", "fastapi"], ["PostgreSQL", "postgresql"], ["Supabase", "supabase"], ["MongoDB", "mongodb"], ["Bash", "gnubash"]]],
+  ["Frontend", [["TypeScript", "typescript"], ["React", "react"], ["Tailwind", "tailwindcss"], ["shadcn/ui", "shadcnui"], ["Vite", "vite"]]],
+  ["Platform", [["Docker", "docker"], ["Kubernetes", "kubernetes"], ["Helm", "helm"], ["GitHub Actions", "githubactions"], ["Playwright", null], ["n8n", "n8n"]]],
 ];
 
 const iconPath = (slug) => {
@@ -237,6 +244,48 @@ function renderStack(t) {
 
 /* -------------------------------------------------------------- writing feed */
 
+/* Ordered by what a visitor should see first, not by star count, but the
+   counts are pulled live so the list never drifts from reality. */
+const PROJECTS = [
+  {
+    title: "CatGPT Gateway",
+    repo: "CatGPT-Gateway",
+    url: "https://github.com/GautamVhavle/CatGPT-Gateway",
+    blurb: "OpenAI-compatible API surface over the ChatGPT and Claude web clients.",
+  },
+  {
+    title: "Spotify README Card",
+    repo: "spotify-readme-card",
+    url: "https://github.com/GautamVhavle/spotify-readme-card",
+    blurb:
+      "The now-playing card above. Animated SVG rendered at the edge, three layouts, eleven themes, zero runtime dependencies. One image tag and it works in any README.",
+  },
+  {
+    title: "LearnerVerse",
+    repo: "learner-verse",
+    url: "https://learnerverse.xyz",
+    blurb: "AI-native learning platform that compiles any playlist into a structured, assessable course.",
+  },
+  {
+    title: "BrowserLLM",
+    repo: "BrowserLLM",
+    url: "https://browserllm.vercel.app",
+    blurb: "100+ language models running entirely in the browser on WebGPU. Nothing leaves the tab.",
+  },
+];
+
+function renderProjects(traction) {
+  return PROJECTS.map(({ title, repo, url, blurb }) => {
+    const t = traction.get(repo);
+    // Only worth showing once it reads as real adoption rather than noise.
+    const badge =
+      t && t.stars >= 25
+        ? ` <sub>&nbsp;${t.stars.toLocaleString("en-US")} stars · ${t.forks} forks</sub>`
+        : "";
+    return `- **[${title}](${url})**: ${blurb}${badge}`;
+  }).join("\n");
+}
+
 /* Highest-signal posts out of the recent window, so the list stays fresh
    without demoting an article that actually landed. */
 async function renderWriting() {
@@ -262,12 +311,16 @@ async function renderWriting() {
     .join("\n");
 }
 
-async function updateReadme(block) {
+async function updateReadme(blocks) {
   const path = resolve(ROOT, "README.md");
   const readme = await readFile(path, "utf8");
-  const next = readme.replace(
-    /(<!-- writing:start -->)[\s\S]*?(<!-- writing:end -->)/,
-    `$1\n${block}\n$2`
+  const next = Object.entries(blocks).reduce(
+    (text, [name, block]) =>
+      text.replace(
+        new RegExp(`(<!-- ${name}:start -->)[\\s\\S]*?(<!-- ${name}:end -->)`),
+        `$1\n${block}\n$2`
+      ),
+    readme
   );
   if (next !== readme) await writeFile(path, next);
 }
@@ -283,7 +336,7 @@ for (const [name, theme] of Object.entries(THEMES)) {
   await writeFile(`${OUT}/stack-${name}.svg`, renderStack(theme));
 }
 
-await updateReadme(await renderWriting());
+await updateReadme({ projects: renderProjects(data.traction), writing: await renderWriting() });
 
 console.log(
   `cards built: ${data.contributions} contributions · ${data.repos} repos · ${data.stars} stars · ${data.streak}d streak`

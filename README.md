@@ -14,14 +14,14 @@
 
 ### About
 
-I work at Siemens, where I build production GenAI systems across retrieval, agent workflows, and thoughtful product interfaces.
+I build production GenAI systems across retrieval, agent workflows, and the interfaces that make them usable.
 
-Patent holder. I care about building things that are meaningful, dependable, and finished with intention. My path through embedded systems, IoT, and software taught me to value the details that turn a clever idea into something people can trust.
+Patent holder. I care about work that is meaningful and dependable, and I would rather ship one thing that holds up than five that only demo well. Coming up through embedded systems and IoT taught me that the details nobody notices are usually the ones that decide whether people can trust what you built.
 
 ### Now
 
-- Building meaningful software at **Siemens** with LangGraph, FastAPI, and React
-- Turning ideas into useful, high-quality products
+- Building production GenAI systems at **Siemens** with LangGraph, FastAPI, and React
+- Maintaining open source tools that other developers run and fork
 - Publishing what I learn about LLM infrastructure
 
 <picture>
@@ -29,19 +29,23 @@ Patent holder. I care about building things that are meaningful, dependable, and
   <img src="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/stats-light.svg" width="460" alt="GitHub activity: contributions, repositories, stars earned and current streak">
 </picture>
 
+<sub>That Spotify card is live, not a screenshot. I wrote <a href="https://github.com/GautamVhavle/spotify-readme-card"><b>spotify-readme-card</b></a> to render it: one image tag and your README has one too.</sub>
+
 <br clear="right">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/stack-dark.svg">
-  <img src="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/stack-light.svg" alt="Stack. AI/LLM: LangChain, LangGraph, MCP, RAG, LlamaIndex, Ollama, LangFuse. Backend: Python, FastAPI, PostgreSQL, Supabase, MongoDB. Frontend: TypeScript, JavaScript, React, Tailwind, Vite. Platform: Docker, Kubernetes, GitHub Actions, Playwright, n8n.">
+  <img src="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/stack-light.svg" alt="Stack. AI/LLM: LangChain, LangGraph, MCP, RAG, LlamaIndex, Ollama, LangFuse. Backend: Python, FastAPI, PostgreSQL, Supabase, MongoDB, Bash. Frontend: TypeScript, React, Tailwind, shadcn/ui, Vite. Platform: Docker, Kubernetes, Helm, GitHub Actions, Playwright, n8n.">
 </picture>
 
 ### Selected work
 
+<!-- projects:start -->
+- **[CatGPT Gateway](https://github.com/GautamVhavle/CatGPT-Gateway)**: OpenAI-compatible API surface over the ChatGPT and Claude web clients. <sub>&nbsp;256 stars · 55 forks</sub>
+- **[Spotify README Card](https://github.com/GautamVhavle/spotify-readme-card)**: The now-playing card above. Animated SVG rendered at the edge, three layouts, eleven themes, zero runtime dependencies. One image tag and it works in any README.
 - **[LearnerVerse](https://learnerverse.xyz)**: AI-native learning platform that compiles any playlist into a structured, assessable course.
-- **[CatGPT Gateway](https://github.com/GautamVhavle/CatGPT-Gateway)**: OpenAI-compatible API surface over the ChatGPT and Claude web clients.
 - **[BrowserLLM](https://browserllm.vercel.app)**: 100+ language models running entirely in the browser on WebGPU. Nothing leaves the tab.
-- **[Spotify README Card](https://github.com/GautamVhavle/spotify-readme-card)**: Animated now-playing cards rendered as SVG at the edge, zero runtime dependencies. It draws the card above.
+<!-- projects:end -->
 
 <sub>Plus nine client-side developer tools for JWT inspection, JSON repair, and WCAG contrast auditing at <a href="https://gautamvhavle.xyz/apps">gautamvhavle.xyz/apps</a></sub>
 
