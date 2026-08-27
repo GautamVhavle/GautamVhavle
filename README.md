@@ -1,6 +1,6 @@
 <h1>Gautam Vhavle</h1>
 
-<p><b>Full-Stack &amp; AI Engineer</b> at Siemens &nbsp;·&nbsp; Bangalore, India 🇮🇳</p>
+<p><b>Full-Stack &amp; AI Engineer</b> at Siemens &nbsp;·&nbsp; Bengaluru, India 🇮🇳</p>
 
 <p>
   <a href="https://gautamvhavle.xyz"><b>Portfolio</b></a> &nbsp;·&nbsp;
@@ -18,13 +18,13 @@ I build AI products end to end: retrieval that returns the right thing, agents t
 
 The hard part was never the first working version. It is the last 10%, where reliability, edge cases, and small product decisions determine whether anyone trusts what you shipped. That is where I spend my time, whether the work is a production system, the research behind my patent, or a freelance project I take on.
 
-Outside work: EDM on repeat, too many hours in games, and a homelab I keep breaking and rebuilding.
+Away From Keyboard: 🎛️ EDM on repeat, 🎮 too many hours in games, and a 💻 homelab I keep breaking and rebuilding.
 
 ### Now
 
-- Shipping retrieval and agent systems into production
-- Maintaining open source tools that other developers run and fork
-- Publishing what I learn about LLM infrastructure
+- 🚀 Shipping retrieval and agent systems into production at work
+- 🧑‍💻 Maintaining open source tools that other developers run and fork
+- 📝 Sharing what I build, learn, and explore in technology
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/stats-dark.svg">
