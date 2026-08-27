@@ -1,6 +1,6 @@
 <h1>Gautam Vhavle</h1>
 
-<p><b>Full-Stack &amp; GenAI Engineer</b> at Siemens &nbsp;·&nbsp; Bangalore, India</p>
+<p><b>Full-Stack &amp; AI Engineer</b> at Siemens &nbsp;·&nbsp; Bangalore, India</p>
 
 <p>
   <a href="https://gautamvhavle.xyz"><b>Portfolio</b></a> &nbsp;·&nbsp;
@@ -14,9 +14,11 @@
 
 ### About
 
-I build GenAI products that make it past the prototype: retrieval systems, agent workflows, and interfaces people actually want to use.
+I build AI products that move beyond the demo: retrieval systems, agent workflows, and interfaces people actually want to use.
 
-Patent holder, full-stack engineer, and builder with roots in embedded systems and IoT. I care about the last 10%: the reliability, clarity, and product detail that turn capable technology into something people trust.
+AI engineer at Siemens, patent holder, and freelance builder. I work across the stack to turn complex AI ideas into reliable products. My engineering roots are in embedded systems and IoT, and I care about the last 10%: the reliability, clarity, and product detail that make technology worth trusting.
+
+Away from the keyboard, I am usually listening to EDM, playing video games, or building out my homelab.
 
 ### Now
 
