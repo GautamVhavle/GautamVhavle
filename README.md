@@ -14,9 +14,9 @@
 
 ### About
 
-I build production GenAI systems across retrieval, agent workflows, and the interfaces that make them usable.
+I build GenAI products that make it past the prototype: retrieval systems, agent workflows, and interfaces people actually want to use.
 
-Patent holder. I care about turning complex systems into dependable products that people can use and maintain. Coming up through embedded systems and IoT taught me that the details nobody notices are usually the ones that decide whether people can trust what you built.
+Patent holder, full-stack engineer, and builder with roots in embedded systems and IoT. I care about the last 10%: the reliability, clarity, and product detail that turn capable technology into something people trust.
 
 ### Now
 
