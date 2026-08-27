@@ -1,6 +1,6 @@
 <h1>Gautam Vhavle</h1>
 
-<p><b>Full-Stack &amp; AI Engineer</b> at Siemens &nbsp;·&nbsp; Bangalore, India</p>
+<p><b>Full-Stack &amp; AI Engineer</b> at Siemens &nbsp;·&nbsp; Bangalore, India 🇮🇳</p>
 
 <p>
   <a href="https://gautamvhavle.xyz"><b>Portfolio</b></a> &nbsp;·&nbsp;
@@ -14,15 +14,15 @@
 
 ### About
 
-I build AI products that survive contact with real users: retrieval systems, agent workflows, and interfaces people actually want to use.
+I build AI products end to end: retrieval that returns the right thing, agents that recover from failure, and interfaces worth using.
 
-The hard part was never the first working version. It is the last 10%, where reliability, edge cases, and small product decisions determine whether anyone trusts what you shipped. That is where I spend my time, whether it is production work at Siemens, the research behind my patent, or freelance projects I take on.
+The hard part was never the first working version. It is the last 10%, where reliability, edge cases, and small product decisions determine whether anyone trusts what you shipped. That is where I spend my time, whether the work is a production system, the research behind my patent, or a freelance project I take on.
 
 Outside work: EDM on repeat, too many hours in games, and a homelab I keep breaking and rebuilding.
 
 ### Now
 
-- Building production GenAI systems at **Siemens**
+- Shipping retrieval and agent systems into production
 - Maintaining open source tools that other developers run and fork
 - Publishing what I learn about LLM infrastructure
 
