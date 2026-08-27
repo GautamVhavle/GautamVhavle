@@ -175,9 +175,9 @@ function renderContributions(data, t) {
 /* TypeScript is listed without JavaScript on purpose: one implies the other. */
 const STACK = [
   ["AI / LLM", [["LangChain", "langchain"], ["LangGraph", null], ["MCP", null], ["RAG", null], ["LlamaIndex", null], ["Ollama", "ollama"], ["LangFuse", null]]],
-  ["Backend", [["Python", "python"], ["FastAPI", "fastapi"], ["PostgreSQL", "postgresql"], ["Supabase", "supabase"], ["MongoDB", "mongodb"], ["Bash", "gnubash"]]],
-  ["Frontend", [["TypeScript", "typescript"], ["React", "react"], ["Tailwind", "tailwindcss"], ["shadcn/ui", "shadcnui"], ["Vite", "vite"]]],
-  ["Platform", [["Docker", "docker"], ["Kubernetes", "kubernetes"], ["Helm", "helm"], ["GitHub Actions", "githubactions"], ["Playwright", null], ["n8n", "n8n"]]],
+  ["Backend", [["Python", "python"], ["FastAPI", "fastapi"], ["PostgreSQL", "postgresql"], ["Supabase", "supabase"], ["Bash", "gnubash"]]],
+  ["Frontend", [["TypeScript", "typescript"], ["React", "react"], ["Tailwind", "tailwindcss"], ["shadcn/ui", "shadcnui"]]],
+  ["Platform", [["Docker", "docker"], ["Kubernetes", "kubernetes"], ["GitHub Actions", "githubactions"], ["Playwright", null], ["n8n", "n8n"]]],
 ];
 
 const iconPath = (slug) => {

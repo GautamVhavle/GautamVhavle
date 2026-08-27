@@ -16,11 +16,11 @@
 
 I build production GenAI systems across retrieval, agent workflows, and the interfaces that make them usable.
 
-Patent holder. I care about work that is meaningful and dependable, and I would rather ship one thing that holds up than five that only demo well. Coming up through embedded systems and IoT taught me that the details nobody notices are usually the ones that decide whether people can trust what you built.
+Patent holder. I care about turning complex systems into dependable products that people can use and maintain. Coming up through embedded systems and IoT taught me that the details nobody notices are usually the ones that decide whether people can trust what you built.
 
 ### Now
 
-- Building production GenAI systems at **Siemens** with LangGraph, FastAPI, and React
+- Building production GenAI systems at **Siemens**
 - Maintaining open source tools that other developers run and fork
 - Publishing what I learn about LLM infrastructure
 
@@ -35,7 +35,7 @@ Patent holder. I care about work that is meaningful and dependable, and I would 
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/stack-dark.svg">
-  <img src="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/stack-light.svg" alt="Stack. AI/LLM: LangChain, LangGraph, MCP, RAG, LlamaIndex, Ollama, LangFuse. Backend: Python, FastAPI, PostgreSQL, Supabase, MongoDB, Bash. Frontend: TypeScript, React, Tailwind, shadcn/ui, Vite. Platform: Docker, Kubernetes, Helm, GitHub Actions, Playwright, n8n.">
+  <img src="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/stack-light.svg" alt="Stack. AI/LLM: LangChain, LangGraph, MCP, RAG, LlamaIndex, Ollama, LangFuse. Backend: Python, FastAPI, PostgreSQL, Supabase, Bash. Frontend: TypeScript, React, Tailwind, shadcn/ui. Platform: Docker, Kubernetes, GitHub Actions, Playwright, n8n.">
 </picture>
 
 ### Selected work
