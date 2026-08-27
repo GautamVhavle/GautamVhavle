@@ -61,7 +61,6 @@ async function collect() {
   ]);
 
   let stars = 0;
-  const traction = new Map();
   for (let page = 1; page <= 4; page++) {
     const repos = await getJSON(
       `https://api.github.com/users/${USER}/repos?per_page=100&page=${page}&type=owner`
@@ -69,7 +68,6 @@ async function collect() {
     for (const r of repos) {
       if (r.fork) continue;
       stars += r.stargazers_count;
-      traction.set(r.name, { stars: r.stargazers_count, forks: r.forks_count });
     }
     if (repos.length < 100) break;
   }
@@ -92,7 +90,6 @@ async function collect() {
     followers: profile.followers,
     stars,
     streak,
-    traction,
   };
 }
 
@@ -244,48 +241,6 @@ function renderStack(t) {
 
 /* -------------------------------------------------------------- writing feed */
 
-/* Ordered by what a visitor should see first, not by star count, but the
-   counts are pulled live so the list never drifts from reality. */
-const PROJECTS = [
-  {
-    title: "CatGPT Gateway",
-    repo: "CatGPT-Gateway",
-    url: "https://github.com/GautamVhavle/CatGPT-Gateway",
-    blurb: "OpenAI-compatible API surface over the ChatGPT and Claude web clients.",
-  },
-  {
-    title: "Spotify README Card",
-    repo: "spotify-readme-card",
-    url: "https://github.com/GautamVhavle/spotify-readme-card",
-    blurb:
-      "The now-playing card above. Animated SVG rendered at the edge, three layouts, eleven themes, zero runtime dependencies. One image tag and it works in any README.",
-  },
-  {
-    title: "LearnerVerse",
-    repo: "learner-verse",
-    url: "https://learnerverse.xyz",
-    blurb: "AI-native learning platform that compiles any playlist into a structured, assessable course.",
-  },
-  {
-    title: "BrowserLLM",
-    repo: "BrowserLLM",
-    url: "https://browserllm.vercel.app",
-    blurb: "100+ language models running entirely in the browser on WebGPU. Nothing leaves the tab.",
-  },
-];
-
-function renderProjects(traction) {
-  return PROJECTS.map(({ title, repo, url, blurb }) => {
-    const t = traction.get(repo);
-    // Only worth showing once it reads as real adoption rather than noise.
-    const badge =
-      t && t.stars >= 25
-        ? ` <sub>&nbsp;${t.stars.toLocaleString("en-US")} stars · ${t.forks} forks</sub>`
-        : "";
-    return `- **[${title}](${url})**: ${blurb}${badge}`;
-  }).join("\n");
-}
-
 /* Highest-signal posts out of the recent window, so the list stays fresh
    without demoting an article that actually landed. */
 async function renderWriting() {
@@ -336,7 +291,7 @@ for (const [name, theme] of Object.entries(THEMES)) {
   await writeFile(`${OUT}/stack-${name}.svg`, renderStack(theme));
 }
 
-await updateReadme({ projects: renderProjects(data.traction), writing: await renderWriting() });
+await updateReadme({ writing: await renderWriting() });
 
 console.log(
   `cards built: ${data.contributions} contributions · ${data.repos} repos · ${data.stars} stars · ${data.streak}d streak`

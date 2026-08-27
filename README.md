@@ -38,17 +38,6 @@ Patent holder, full-stack engineer, and builder with roots in embedded systems a
   <img src="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/stack-light.svg" alt="Stack. AI/LLM: LangChain, LangGraph, MCP, RAG, LlamaIndex, Ollama, LangFuse. Backend: Python, FastAPI, PostgreSQL, Supabase, Bash. Frontend: TypeScript, React, Tailwind, shadcn/ui. Platform: Docker, Kubernetes, GitHub Actions, Playwright, n8n.">
 </picture>
 
-### Selected work
-
-<!-- projects:start -->
-- **[CatGPT Gateway](https://github.com/GautamVhavle/CatGPT-Gateway)**: OpenAI-compatible API surface over the ChatGPT and Claude web clients. <sub>&nbsp;256 stars · 55 forks</sub>
-- **[Spotify README Card](https://github.com/GautamVhavle/spotify-readme-card)**: The now-playing card above. Animated SVG rendered at the edge, three layouts, eleven themes, zero runtime dependencies. One image tag and it works in any README.
-- **[LearnerVerse](https://learnerverse.xyz)**: AI-native learning platform that compiles any playlist into a structured, assessable course.
-- **[BrowserLLM](https://browserllm.vercel.app)**: 100+ language models running entirely in the browser on WebGPU. Nothing leaves the tab.
-<!-- projects:end -->
-
-<sub>Plus nine client-side developer tools for JWT inspection, JSON repair, and WCAG contrast auditing at <a href="https://gautamvhavle.xyz/apps">gautamvhavle.xyz/apps</a></sub>
-
 ### Writing
 
 <!-- writing:start -->
