@@ -1,0 +1,12 @@
+{
+  "name": "gautamvhavle-profile",
+  "private": true,
+  "type": "module",
+  "description": "Generator for the custom SVG cards used in my GitHub profile README.",
+  "scripts": {
+    "build": "node scripts/build-cards.mjs"
+  },
+  "devDependencies": {
+    "simple-icons": "^13.0.0"
+  }
+}

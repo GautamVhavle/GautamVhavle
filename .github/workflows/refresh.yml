@@ -1,0 +1,41 @@
+name: Refresh profile cards
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Twice daily; GitHub's camo cache means anything tighter is wasted work.
+    - cron: "17 4,16 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-cards
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit refreshed cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets README.md
+          git diff --staged --quiet || git commit -m "chore: refresh profile cards"
+          git push
