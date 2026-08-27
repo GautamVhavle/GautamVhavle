@@ -14,11 +14,11 @@
 
 ### About
 
-I build AI products that move beyond the demo: retrieval systems, agent workflows, and interfaces people actually want to use.
+I build AI products that survive contact with real users: retrieval systems, agent workflows, and interfaces people actually want to use.
 
-AI engineer at Siemens, patent holder, and freelance builder. I work across the stack to turn complex AI ideas into reliable products. My engineering roots are in embedded systems and IoT, and I care about the last 10%: the reliability, clarity, and product detail that make technology worth trusting.
+The hard part was never the first working version. It is the last 10%, where reliability, edge cases, and small product decisions determine whether anyone trusts what you shipped. That is where I spend my time, whether it is production work at Siemens, the research behind my patent, or freelance projects I take on.
 
-Away from the keyboard, I am usually listening to EDM, playing video games, or building out my homelab.
+Outside work: EDM on repeat, too many hours in games, and a homelab I keep breaking and rebuilding.
 
 ### Now
 
