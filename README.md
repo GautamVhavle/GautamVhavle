@@ -33,7 +33,7 @@ Patent holder. I came up through embedded firmware and IoT fleets, which is wher
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/stack-dark.svg">
-  <img src="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/stack-light.svg" alt="Stack: LangChain, LangGraph, MCP, RAG, Ollama, LlamaIndex, Python, FastAPI, PostgreSQL, Supabase, MongoDB, TypeScript, React, Tailwind, Vite, Docker, Kubernetes, Helm, Vercel, GitHub Actions">
+  <img src="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/stack-light.svg" alt="Stack. AI/LLM: LangChain, LangGraph, MCP, RAG, LlamaIndex, Ollama, LangFuse, Docling. Backend: Python, FastAPI, PostgreSQL, Prisma, Supabase, MongoDB, MSSQL. Frontend: TypeScript, React, Tailwind, shadcn/ui, Vite, Sass. Platform: Docker, Kubernetes, Helm, Vercel, GitHub Actions, Playwright, n8n.">
 </picture>
 
 ### Selected work

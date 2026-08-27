@@ -167,10 +167,10 @@ function renderContributions(data, t) {
 /* ---------------------------------------------------------------- stack grid */
 
 const STACK = [
-  ["AI / LLM", [["LangChain", "langchain"], ["LangGraph", null], ["MCP", null], ["RAG", null], ["Ollama", "ollama"], ["LlamaIndex", null]]],
-  ["Backend", [["Python", "python"], ["FastAPI", "fastapi"], ["PostgreSQL", "postgresql"], ["Supabase", "supabase"], ["MongoDB", "mongodb"]]],
-  ["Frontend", [["TypeScript", "typescript"], ["React", "react"], ["Tailwind", "tailwindcss"], ["Vite", "vite"]]],
-  ["Platform", [["Docker", "docker"], ["Kubernetes", "kubernetes"], ["Helm", "helm"], ["Vercel", "vercel"], ["Actions", "githubactions"]]],
+  ["AI / LLM", [["LangChain", "langchain"], ["LangGraph", null], ["MCP", null], ["RAG", null], ["LlamaIndex", null], ["Ollama", "ollama"], ["LangFuse", null], ["Docling", null]]],
+  ["Backend", [["Python", "python"], ["FastAPI", "fastapi"], ["PostgreSQL", "postgresql"], ["Prisma", "prisma"], ["Supabase", "supabase"], ["MongoDB", "mongodb"], ["MSSQL", null]]],
+  ["Frontend", [["TypeScript", "typescript"], ["React", "react"], ["Tailwind", "tailwindcss"], ["shadcn/ui", "shadcnui"], ["Vite", "vite"], ["Sass", "sass"]]],
+  ["Platform", [["Docker", "docker"], ["Kubernetes", "kubernetes"], ["Helm", "helm"], ["Vercel", "vercel"], ["Actions", "githubactions"], ["Playwright", null], ["n8n", "n8n"]]],
 ];
 
 const iconPath = (slug) => {
@@ -180,7 +180,6 @@ const iconPath = (slug) => {
 };
 
 function renderStack(t) {
-  const W = 880;
   const PAD = 16;
   const GUTTER = 96;
   const ROW_H = 30;
@@ -188,41 +187,52 @@ function renderStack(t) {
   const FS = 11;
   const ICON = 12;
 
-  let y = 34;
+  // Lay out first so the card can be sized to its content rather than
+  // stranding empty space on the right.
+  let cursor = 34;
+  const rows = STACK.map(([label, items]) => {
+    let x = PAD + GUTTER;
+    const pills = items.map(([name, slug]) => {
+      const path = iconPath(slug);
+      const w = 22 + monoWidth(name, FS) + (path ? ICON + 7 : 0);
+      const pill = { name, path, x, w };
+      x += w + GAP;
+      return pill;
+    });
+    const row = { label, pills, y: cursor, end: x - GAP };
+    cursor += ROW_H + GAP;
+    return row;
+  });
+
+  const W = Math.ceil(Math.max(...rows.map((r) => r.end)) + PAD);
+  const H = cursor - GAP + PAD;
+
   let body = kicker(PAD, 18, "stack", t);
   body += `<line x1="${PAD}" y1="30" x2="${W - PAD}" y2="30" stroke="${t.line}"/>`;
 
-  for (const [label, items] of STACK) {
+  for (const { label, pills, y } of rows) {
     body += `<text x="${PAD}" y="${y + ROW_H / 2 + 3}" font-family="${MONO}" font-size="9" letter-spacing="1" fill="${t.faint}">${esc(
       label.toUpperCase()
     )}</text>`;
 
-    let x = PAD + GUTTER;
-    for (const [name, slug] of items) {
-      const path = iconPath(slug);
-      const textW = monoWidth(name, FS);
-      const pillW = 22 + textW + (path ? ICON + 7 : 0);
-      body += `<rect x="${x.toFixed(1)}" y="${y}" width="${pillW.toFixed(
+    for (const { name, path, x, w } of pills) {
+      body += `<rect x="${x.toFixed(1)}" y="${y}" width="${w.toFixed(
         1
       )}" height="${ROW_H}" rx="${ROW_H / 2}" stroke="${t.line}"/>`;
       let tx = x + 11;
       if (path) {
-        const s = ICON / 24;
-        body += `<g transform="translate(${tx.toFixed(1)} ${(y + (ROW_H - ICON) / 2).toFixed(1)}) scale(${s.toFixed(
-          4
-        )})"><path d="${path}" fill="${t.muted}"/></g>`;
+        body += `<g transform="translate(${tx.toFixed(1)} ${(y + (ROW_H - ICON) / 2).toFixed(
+          1
+        )}) scale(${(ICON / 24).toFixed(4)})"><path d="${path}" fill="${t.muted}"/></g>`;
         tx += ICON + 7;
       }
       body += `<text x="${tx.toFixed(1)}" y="${y + ROW_H / 2 + 4}" font-family="${MONO}" font-size="${FS}" fill="${t.ink}">${esc(
         name
       )}</text>`;
-      x += pillW + GAP;
     }
-    if (x > W - PAD) console.warn(`stack row "${label}" overflows by ${Math.ceil(x - (W - PAD))}px`);
-    y += ROW_H + GAP;
   }
 
-  return svg(W, y - GAP + PAD, body);
+  return svg(W, H, body);
 }
 
 /* -------------------------------------------------------------- writing feed */
