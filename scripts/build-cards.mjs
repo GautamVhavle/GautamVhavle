@@ -241,8 +241,7 @@ function renderStack(t) {
 
 /* -------------------------------------------------------------- writing feed */
 
-/* Highest-signal posts out of the recent window, so the list stays fresh
-   without demoting an article that actually landed. */
+/* Keep the feed focused on the latest published work. */
 async function renderWriting() {
   const res = await fetch(`https://dev.to/api/articles?username=${DEVTO}&per_page=6`, {
     headers: { "User-Agent": `${USER}-profile-cards` },
@@ -250,9 +249,8 @@ async function renderWriting() {
   if (!res.ok) throw new Error(`dev.to ${res.status}`);
 
   const posts = (await res.json())
-    .sort((a, b) => b.public_reactions_count - a.public_reactions_count)
-    .slice(0, 3)
-    .sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+    .sort((a, b) => new Date(b.published_at) - new Date(a.published_at))
+    .slice(0, 3);
 
   return posts
     .map((p) => {

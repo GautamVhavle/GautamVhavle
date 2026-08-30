@@ -43,9 +43,9 @@ Away From Keyboard: 🎛️ EDM on repeat, 🎮 too many hours in games, and a �
 ### Writing
 
 <!-- writing:start -->
+- [A Live Spotify Card Inside a Static README: How I Built It and Why It Works](https://dev.to/gautamvhavle/a-live-spotify-card-inside-a-static-readme-how-i-built-it-and-why-it-works-5fl2) <sub>&nbsp;Aug 2026</sub>
 - [I Ran a 2-Billion Parameter AI Model in a Browser Tab. No Server.](https://dev.to/gautamvhavle/i-ran-a-2-billion-parameter-ai-model-in-a-browser-tab-no-server-f61) <sub>&nbsp;May 2026</sub>
-- [I Reverse Engineered ChatGPT's UI Into an OpenAI Compatible API and Here's Why You Shouldn't](https://dev.to/gautamvhavle/i-reverse-engineered-chatgpts-ui-into-an-openai-compatible-api-and-heres-why-you-shouldnt-ch) <sub>&nbsp;Feb 2026</sub>
-- [Building RAG Systems: From Zero to Hero](https://dev.to/gautamvhavle/building-production-rag-systems-from-zero-to-hero-2f1i) <sub>&nbsp;Dec 2025</sub>
+- [My JSON Was Too Big for My AI, So I Built an MCP Server to Fix It](https://dev.to/gautamvhavle/my-json-was-too-big-for-my-ai-so-i-built-an-mcp-server-to-fix-it-43m2) <sub>&nbsp;Mar 2026</sub>
 <!-- writing:end -->
 
 <picture>
