@@ -54,3 +54,5 @@ Away From Keyboard: 🎛️ EDM on repeat, 🎮 too many hours in games, and a �
 </picture>
 
 <sub>Every card on this page is generated from live data by <a href="https://github.com/GautamVhavle/GautamVhavle/blob/main/.github/workflows/refresh.yml">a workflow in this repo</a>.</sub>
+
+<p><img src="https://komarev.com/ghpvc/?username=GautamVhavle&label=profile%20views&color=555555&style=flat-square" alt="Profile views"></p>
