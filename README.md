@@ -48,6 +48,8 @@ Away From Keyboard: 🎛️ EDM on repeat, 🎮 too many hours in games, and a �
 - [My JSON Was Too Big for My AI, So I Built an MCP Server to Fix It](https://dev.to/gautamvhavle/my-json-was-too-big-for-my-ai-so-i-built-an-mcp-server-to-fix-it-43m2) <sub>&nbsp;Mar 2026</sub>
 <!-- writing:end -->
 
+<p><b>Check out more</b> of my writing on <a href="https://dev.to/gautamvhavle">DEV.to</a> →</p>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/contributions-dark.svg">
   <img src="https://raw.githubusercontent.com/GautamVhavle/GautamVhavle/main/assets/contributions-light.svg" alt="Contribution activity over the last year">
